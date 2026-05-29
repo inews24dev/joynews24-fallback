@@ -1,32 +1,164 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
-	</head>
-	<body>
-		<h1 id="heading"></h1>
-		<p>This page comes from a static asset stored at `public/index.html` as configured in `wrangler.jsonc`.</p>
-		<button id="button" type="button">Fetch a random UUID</button>
-		<output id="random" for="button"></output>
-		<script>
-			fetch('/message')
-				.then((resp) => resp.text())
-				.then((text) => {
-					const h1 = document.getElementById('heading');
-					h1.textContent = text;
-				});
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>조이뉴스24</title>
+    <style>
+        @media (min-width: 768px) {
+        main {
+            width: 768px;
+            margin: 0px auto;
+                }
+        }
 
-			const button = document.getElementById("button");
-			button.addEventListener("click", () => {
-				fetch('/random')
-					.then((resp) => resp.text())
-					.then((text) => {
-						const random = document.getElementById('random');
-						random.textContent = text;
-					});
-			});
-		</script>
-	</body>
+        html,body{
+                font-family: 'Noto Sans CJK KR Regular', 'Apple SD Gothic Neo', 'Sans-serif', Sans-serif, serif, 'system-ui';
+                margin: 0px;
+                background-color: #ececec;
+
+            }
+            main{
+                background-color: white;
+                padding:0px 10px;
+                height: 100%;
+            }
+            header {
+                text-align: center;
+                height: 53px;
+                vertical-align: middle;
+                line-height: 53px;
+                border-bottom: 2px solid #eff2f8;
+            }
+            header > svg{
+                height:30px;
+                vertical-align: middle;
+            }
+
+            h1{
+                color: black;
+                font-size: 32px;
+                line-height: 38px;
+                margin-top: 16px;
+                font-weight: 700;
+            }
+            hgroup{
+                border-left:2px solid black;
+            
+            }
+
+
+            h2{
+                padding-left: 10px;
+                color: black;
+                font-size: 20px;
+                line-height: 25px;
+                margin-top: 15px;
+                font-weight: 500;
+            }
+            time{
+                display: block;
+                font-size: 12px;
+                color: #595959;
+                font-weight: normal;
+            }
+
+            address{
+                font-size: 12px;
+                font-style: normal;
+                color: #595959;
+            }
+
+            article{
+                min-height: calc(100% - 300px);
+            }
+            footer{
+                --height:100px;
+                line-height: var(--height);
+                height: var(--height);
+                text-align: center;
+                font-size: 12px;
+                color: #666;
+                
+            }
+
+            figure{
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+            }
+            figure img{
+                max-width: 100%;
+                object-fit: contain;
+                height: auto;
+                text-align: center;
+
+            }
+
+            figcaption{
+                text-align: center;
+                color: #595959;
+                font-size: 14px;
+                line-height: 18px;
+                padding: 10px;
+            }
+
+            a:link {
+                text-decoration: none;
+            }
+
+            a {
+                color: inherit;
+            }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+			<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="157px" height="42px" viewBox="0 0 157 42" enable-background="new 0 0 157 42" xml:space="preserve">
+<path fill="#231F20" d="M46.937,10.894c1.162,1.718,1.571,3.792,1.226,6.217c-0.336,2.369-1.327,4.404-2.971,6.1
+	c-1.826,1.897-4.039,2.845-6.642,2.845c-2.6,0-4.545-0.947-5.833-2.845c-1.146-1.696-1.551-3.731-1.215-6.1
+	c0.343-2.425,1.332-4.5,2.959-6.217c1.811-1.914,4.023-2.87,6.645-2.87C43.707,8.023,45.65,8.98,46.937,10.894 M37.675,13.832
+	c-0.67,0.868-1.102,1.963-1.289,3.279c-0.183,1.282-0.056,2.334,0.377,3.162c0.497,0.926,1.295,1.389,2.396,1.389
+	c1.123,0,2.073-0.462,2.852-1.389c0.705-0.828,1.149-1.88,1.33-3.162c0.188-1.316,0.047-2.412-0.417-3.279
+	c-0.513-0.944-1.331-1.417-2.451-1.417C39.371,12.415,38.438,12.888,37.675,13.832 M51.909,8.023h4.789l-3.684,26.001h-4.789
+	L51.909,8.023z"/>
+<path fill="#231F20" d="M73.646,25.364h-6.2l-1.226,8.66h-4.794l1.227-8.66h-4.57l0.638-4.496h24.925l-0.634,4.496h-4.572
+	l-1.223,8.66h-4.798L73.646,25.364 M66.218,8.023l-0.813,5.731h18.443l-0.638,4.497H62.234c-0.748,0-1.289-0.191-1.617-0.569
+	c-0.382-0.421-0.507-1.09-0.378-2.007l1.083-7.651H66.218z"/>
+<path fill="#231F20" d="M110.555,29.341l-0.663,4.684H83.734l0.663-4.684H110.555 M103.204,8.023
+	c-0.453,3.197,0.021,5.587,1.426,7.172c1.261,1.44,3.384,2.329,6.37,2.665l-0.695,4.916c-2.641-0.229-4.983-0.844-7.03-1.849
+	c-2.164-1.063-3.513-2.337-4.046-3.822c-1,1.526-2.734,2.811-5.191,3.855c-2.31,0.983-4.825,1.586-7.552,1.815l0.691-4.887
+	c3.085-0.352,5.46-1.253,7.132-2.694c1.879-1.606,3.04-3.996,3.489-7.172H103.204z"/>
+<g>
+	<path fill="#231F20" d="M18.358,22.679l-0.941,6.645h10.747l-0.667,4.701H1l0.664-4.701h10.683l0.941-6.645H18.358z M20.365,12.72
+		c0.067,1.682,0.774,3.005,2.125,3.971c1.328,0.967,3.26,1.555,5.793,1.764l-0.692,4.882c-2.583-0.145-4.916-0.693-7-1.639
+		c-2.147-0.944-3.52-2.087-4.123-3.433c-1.008,1.366-2.72,2.521-5.131,3.464c-2.349,0.926-4.847,1.463-7.494,1.607l0.688-4.852
+		c2.593-0.21,4.693-0.809,6.298-1.795c1.602-0.966,2.663-2.289,3.188-3.971H5.561l0.664-4.696h23.322l-0.666,4.696H20.365z"/>
+</g>
+<g>
+	<path fill="#EB008B" d="M147.145,36.031l3.525-1.048c2.958-0.88,4.969-3.411,5.33-6.286h-7.585L147.145,36.031z"/>
+	<path fill="#EB008B" d="M131.384,15.474c-0.703-1.198-3.711-2.058-9.385,1.96l-2.029-2.701l1.104-0.587
+		c0,0,6.342-3.467,12.163-2.09c5.102,1.212,4.73,4.987,1.554,7.745c-3.709,3.214-9.036,5.642-10.482,6.196h9.467L150.912,9.42
+		l-0.899-3.015c-1.19-3.985-5.391-6.254-9.382-5.065l-19.24,5.724c-3.993,1.186-6.265,5.38-5.074,9.366l2.848,9.542
+		c2.655-1.256,6.082-3.068,8.52-4.785C131.064,18.8,132.087,16.67,131.384,15.474z"/>
+	<path fill="#EB008B" d="M155.841,26.003c-0.03-0.13-0.056-0.261-0.094-0.391l-4.327-14.495l-2.543,14.885H155.841z"/>
+	<path fill="#EB008B" d="M119.979,28.705l2.068,6.934c1.191,3.986,5.393,6.256,9.386,5.07l11.167-3.324l1.519-8.68H119.979z"/>
+	<polygon fill="#EB008B" points="144.585,26.003 146.096,17.047 137.36,26.003 	"/>
+</g>
+</svg>
+
+		</header>
+        <h1>제목</h1>
+        <time>입력 2026.05.28 오후 12:42</time>
+        <hgroup>
+            <h2></h2>
+        </hgroup>
+        <article>본문</article>
+        <footer>Copyright(c) 아이뉴스24. 무단전재 및 재배포 금지</footer>
+    </main>
+</body>
 </html>

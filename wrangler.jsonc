@@ -12,9 +12,16 @@
 		"global_fetch_strictly_public"
 	],
 	"assets": {
-		// The path to the directory containing the `index.html` file to be served at `/`
-		"directory": "./public"
+		"directory": "./public",
+		"binding": "ASSETS",
+		"run_worker_first": true
 	},
+	"kv_namespaces": [
+		{
+			"binding": "G_CONTENT",
+			"id": "cbb9b94280be4d21abd8eca0c0c562c4"
+		}
+	],
 	"observability": {
 		"enabled": true
 	},
