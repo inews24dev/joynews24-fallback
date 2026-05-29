@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>조이뉴스24</title>
     <style>
-         @media (min-width: 768px) {
-            main {
-                width: 768px;
-                margin: 0px auto;
-            }
+        @media (min-width: 768px) {
+			html body {
+				width: 768px;
+				margin: 0px auto;
+			}
         }
 
         html,body{
-                font-family: 'Noto Sans CJK KR Regular', 'Apple SD Gothic Neo', 'Sans-serif', Sans-serif, serif, 'system-ui';
+				font-family: 'Noto Sans KR', 'Apple SD Gothic Neo', sans-serif;
                 margin: 0px;
                 background-color: #ececec;
 
             }
             main{
                 background-color: white;
-                padding:0px 10px;
+                padding:0px 20px;
                 height: 100%;
             }
             header {
@@ -29,18 +29,23 @@
                 vertical-align: middle;
                 line-height: 53px;
                 border-bottom: 2px solid #eff2f8;
+				background-color: white;
             }
             header > svg{
-                height:20px;
+                height:30px;
                 vertical-align: middle;
             }
+
+		
 
             h1{
                 color: black;
                 font-size: 32px;
                 line-height: 38px;
-                margin-top: 16px;
+                
                 font-weight: 700;
+				margin:0px;
+    			padding:16px 0px;
             }
             hgroup{
                 border-left:2px solid black;
@@ -56,6 +61,22 @@
                 margin-top: 15px;
                 font-weight: 500;
             }
+
+			h3{
+
+				position: relative;
+				margin-top: 17px;
+				margin-bottom: 16px;
+				padding-top: 15px;
+				padding-bottom: 14px;
+				border-top: 1px solid #444446;
+				border-bottom: 1px solid #ebebeb;
+				color: #3e3e40;
+				font-size: 20px;
+				line-height: 1.5;
+
+			}
+
             time{
                 display: block;
                 font-size: 12px;
@@ -70,7 +91,14 @@
             }
 
             article{
+
                 min-height: calc(100% - 300px);
+				color: #333;
+				font-size: 18px;
+				letter-spacing: 0px;
+				line-height: 26px;
+				word-break: break-all;
+
             }
             footer{
                 --height:100px;
@@ -79,7 +107,7 @@
                 text-align: center;
                 font-size: 12px;
                 color: #666;
-                
+				background-color: white;
             }
 
             figure{
@@ -110,6 +138,10 @@
             a {
                 color: inherit;
             }
+			iframe{
+				width:100%;
+			}
+
 
     </style>
 
